@@ -1,0 +1,9 @@
+.pokedex-demo .navbar-default .navbar-brand,
+.pokedex-demo .navbar-nav > li > a{
+    color: #fff;
+}
+.pokedex-demo .navbar.navbar-default{
+    background-color: rgb(195, 14, 14);
+    border-radius: 0px;
+    color: white;
+}
