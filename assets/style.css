@@ -2,6 +2,9 @@
 .pokedex-demo .navbar-nav > li > a{
     color: #fff;
 }
+.pokedex-demo .navbar-nav > li > a:hover{
+    color: #84d1f8;
+}
 .pokedex-demo .navbar.navbar-default{
     background-color: rgb(195, 14, 14);
     border-radius: 0px;
@@ -17,17 +20,41 @@
 .hidden{
     display: none;
 }
+.hidden-vis{
+    visibility: hidden;
+}
 .pokemon-spinner{
-    height: 252px;
+    height: 143px;
+}
+.poke-card .thumbnail{
+    padding: 0px;
+    overflow: hidden;
 }
 .pokemon-spinner .fa-spin{
     position: absolute;
-    top: 110px;
-    left: 85px;
 }
 .pokemon-info .caption{
     text-align: center;
+    border-top: 1px solid #84d1f8;
+    overflow: hidden;
+    background: #84d1f8;
+    color: white;
+    margin: 0px;
 }
 .card-img-top{
-    width: 100%;
+    width: 96px;
+    height: 96px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+body.pokedex-demo{
+    background-color: #DEE1E3;
+    background-image: linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px),
+                      linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);
+    background-size: 96px 96px,96px 96px,24px 24px,24px 24px;
+    background-position: -1px -1px;
+    min-width: 0;
 }

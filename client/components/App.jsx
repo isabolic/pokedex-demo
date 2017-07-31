@@ -11,8 +11,7 @@ export default class App extends React.Component {
     loadAllPokemonsFromServer() {
         var self = this;
         $.ajax({
-          url: "http://pokeapi.co/api/v2/pokemon/?limit=100",
-          method: "GET"
+          url: "http://pokeapi.co/api/v2/pokemon/?limit=100"
         }).then((data) => {
           self.setState({pokemons: data.results});
         });
