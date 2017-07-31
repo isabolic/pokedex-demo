@@ -5,6 +5,7 @@ export default class Pokemon extends React.Component {
         super(props);
         this.state   = {};
         this.cardDom = null;
+        this.isCanceled = false;
         $(window).on("resize", this.setSpinnerPosition.bind(this));
     }
 
@@ -26,7 +27,9 @@ export default class Pokemon extends React.Component {
     }
 
     setData(data) {
-      this.setState({pokemon:data});
+      if (this.isCanceled !== true) {
+        this.setState({pokemon:data});
+      }
     }
 
     loadPokemonFromServer() {
@@ -50,6 +53,8 @@ export default class Pokemon extends React.Component {
     }
 
     ShowImgOnLoad() {
+        this.setSpinnerPosition();
+
         setTimeout(function() {
             $(this.cardDom).find(".pokemon-spinner")
                 .addClass("hidden");
@@ -57,6 +62,17 @@ export default class Pokemon extends React.Component {
             $(this.cardDom).find(".pokemon-info")
                 .removeClass("hidden");
         }.bind(this), 800);
+    }
+
+    openPokemonDetail(){
+        this.props.openDetail(this.state.pokemon);
+    }
+
+    componentWillUnmount(){
+        this.cardDom = null;
+        this.state   = {};
+        this.isCanceled = true;
+        $(window).off("resize", this.setSpinnerPosition.bind(this));
     }
 
     render() {
@@ -69,13 +85,14 @@ export default class Pokemon extends React.Component {
 
         return (
             <div className="col-md-3 col-sm-4 col-xs-12">
-                <a href="#" className="poke-card card">
+                <a href="#" onClick={this.openPokemonDetail.bind(this)} className="poke-card card">
                     <div className="thumbnail" ref={(cardDom) => { this.cardDom = cardDom; }}>
                         <div className="pokemon-spinner hidden-vis">
                             <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
                         </div>
                         <div className="pokemon-info hidden">
-                            <img className="card-img-top" src={this.state.pokemon.sprites.front_shiny}
+                            <img className="card-img-top"
+                                 src={this.state.pokemon.sprites.front_shiny}
                                  onLoad={this.ShowImgOnLoad.bind(this)}>
                                  </img>
                             <h4 className="caption">{this.state.pokemon.name}</h4>
