@@ -8,10 +8,10 @@ export default class App extends React.Component {
         this.state = {pokemons: []};
     }
 
-    loadPokemonFromServer() {
+    loadAllPokemonsFromServer() {
         var self = this;
         $.ajax({
-          url: "http://pokeapi.co/api/v2/pokemon/",
+          url: "http://pokeapi.co/api/v2/pokemon/?limit=100",
           method: "GET"
         }).then((data) => {
           self.setState({pokemons: data.results});
@@ -19,7 +19,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        this.loadPokemonFromServer();
+        this.loadAllPokemonsFromServer();
     }
 
     render() {

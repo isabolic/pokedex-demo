@@ -7,3 +7,27 @@
     border-radius: 0px;
     color: white;
 }
+
+.pokemon-spinner {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.hidden{
+    display: none;
+}
+.pokemon-spinner{
+    height: 252px;
+}
+.pokemon-spinner .fa-spin{
+    position: absolute;
+    top: 110px;
+    left: 85px;
+}
+.pokemon-info .caption{
+    text-align: center;
+}
+.card-img-top{
+    width: 100%;
+}
