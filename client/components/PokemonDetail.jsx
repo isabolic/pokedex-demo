@@ -17,11 +17,10 @@ export default class PokemonDetail extends React.Component {
             h  = el.outerHeight(true),
             w  = el.outerWidth(true);
 
-            t = h / 2 - (el.find(".fa-spin").outerHeight(true) / 2);
+            t = h - (el.find(".fa-spin").outerHeight(true) / 2);
             l = w / 2 - (el.find(".fa-spin").outerWidth(true) / 2) + 20;
 
             el.find(".fa-spin").css({top: t + "px", left: l + "px"});
-
             el.removeClass("hidden-vis");
 
         }
@@ -94,7 +93,7 @@ export default class PokemonDetail extends React.Component {
                             </button>
                         </h3>
                         <div className="pokemon-spinner hidden-vis">
-                            <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                            <i className="fa fa-spin fa-cog fa-3x fa-fw"></i>
                         </div>
                         <div className="pokemon-info hidden">
                             <img className="card-img-top card-img-top-detail"

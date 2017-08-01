@@ -114,6 +114,7 @@ body.pokedex-demo{
     z-index: 999;
 
 }
+
 .footer-part-2 {
     position: fixed;
     bottom: 0px;
@@ -123,6 +124,7 @@ body.pokedex-demo{
     background-color: #c30e0e;
     z-index: 998;
 }
+
 .spark{
     position: absolute;
     bottom: 30px;
@@ -130,6 +132,16 @@ body.pokedex-demo{
     font-size: 30px;
     color: white;
 }
+
+a.nav-link > .icon-entry,
+a.nav-link > .label-entry{
+    font-size: 15px;
+}
+
+.poke-card-detail .pokemon-spinner .fa-spin {
+    color: #25e23a;
+}
+
 .flash {
   -webkit-animation-name: flash;
   animation-name: flash;
@@ -160,5 +172,44 @@ body.pokedex-demo{
 
     25%, 75% {
         opacity: 0;
+    }
+}
+
+.nav-link-right > li{
+    display: inline-block;
+}
+@media (max-width: 767px) {
+    .pull-xs-left {
+        float: left;
+    }
+    .pull-xs-right {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) {
+    .pull-sm-left {
+        float: left;
+    }
+    .pull-sm-right {
+        float: right;
+    }
+}
+
+@media (min-width: 992px) {
+    .pull-md-left {
+        float: left;
+    }
+    .pull-md-right {
+        float: right;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pull-lg-left {
+        float: left;
+    }
+    .pull-lg-right {
+        float: right;
     }
 }
