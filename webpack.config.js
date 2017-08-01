@@ -7,13 +7,17 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
+var assetsPath = path.join(__dirname, "public", "assets");
+var publicPath = "/";
 
-module.exports = [{
+module.exports = {
    // The configuration for the client
+  name: 'client',
   entry: './client/index.js',
   output: {
     path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
+    publicPath: publicPath
   },
   module: {
     loaders: [
@@ -22,4 +26,4 @@ module.exports = [{
     ]
   },
   plugins: [HtmlWebpackPluginConfig]
-}]
+}

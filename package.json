@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "node server/index.js"
   },
   "author": "isabolic99",
   "license": "MIT",
@@ -20,8 +20,14 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "deferred": "^0.7.8",
     "express": "^4.15.3",
+    "mkdirp": "^0.5.1",
+    "proxy-middleware": "^0.15.0",
+    "q": "^1.5.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "routes": "^2.1.0"
   }
 }

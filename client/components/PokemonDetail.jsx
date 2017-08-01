@@ -6,6 +6,7 @@ export default class PokemonDetail extends React.Component {
         super(props);
         this.state   = {};
         this.cardDom = null;
+        this.infoDom = null;
         $(window).on("resize", this.setSpinnerPosition.bind(this));
     }
 
@@ -36,6 +37,18 @@ export default class PokemonDetail extends React.Component {
 
     back() {
         this.props.back();
+    }
+
+    favorite() {
+        let id = this.props.detail.id;
+
+        $.post("/fav/"+id+"/", function( data ) {
+            $(this.infoDom)
+               .removeClass("hidden");
+        }.bind(this))
+        .fail(function() {
+            alert( "error" );
+        });
     }
 
     ShowImgOnLoad() {
@@ -83,14 +96,22 @@ export default class PokemonDetail extends React.Component {
 
         return (
             <div className="col-md-12 col-sm-12 col-xs-12">
+                <div className="alert alert-info alert-dismissable fade in hidden root" ref={(info) => { this.infoDom = info; }}>
+                    <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Info!</strong> This pokemon is now your favorite. :D...
+                </div>
                 <div className="poke-card-detail card">
                     <div className="thumbnail" ref={(cardDom) => { this.cardDom = cardDom; }}>
                         <h3 className="caption">
+                            <button className="btn btn-link btn-fav" title="Add/remove favorite.." onClick={this.favorite.bind(this)}>
+                                <i className="fa fa-fw fa-star"></i>
+                            </button>
                             {this.props.detail.name}
                             <button className="btn btn-link btn-back pull-right" onClick={this.back.bind(this)}>
                                 <i className="fa fa-fw fa-angle-double-left"></i>
                                 Back
                             </button>
+
                         </h3>
                         <div className="pokemon-spinner hidden-vis">
                             <i className="fa fa-spin fa-cog fa-3x fa-fw"></i>
