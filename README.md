@@ -16,4 +16,9 @@ Your support means a lot.
 2) ```bash
    bower install
    ```
-3) npm start
+3) ```bash
+   npm install --only=dev
+   ```
+   ```bash
+4) npm start
+   ```
