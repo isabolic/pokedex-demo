@@ -10,15 +10,20 @@ Your support means a lot.
 - [node.js](https://nodejs.org)
 - [bower.js](https://bower.io)
 
-1) ```bash
-   npm install
-   ```
-2) ```bash
-   bower install
-   ```
-3) ```bash
-   npm install --only=dev
-   ```
-   ```bash
-4) npm start
-   ```
+1)
+```bash
+npm install
+```
+2) 
+```bash 
+bower install
+```
+3)
+```bash 
+npm install --only=dev
+```
+4)
+```bash 
+npm start
+```
+
