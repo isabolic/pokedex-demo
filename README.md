@@ -14,16 +14,18 @@ Your support means a lot.
 ```bash
 npm install
 ```
-2) 
-```bash 
+2)
+```bash
 bower install
 ```
 3)
-```bash 
+```bash
 npm install --only=dev
 ```
 4)
-```bash 
+```bash
 npm start
 ```
 
+## Demo Application
+http://isabolic99-acidburn.rhcloud.com/
